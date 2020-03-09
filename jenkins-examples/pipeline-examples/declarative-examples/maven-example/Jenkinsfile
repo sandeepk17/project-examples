@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'maven:3-alpine'
+            args '-v $HOME/.m2:/root/.m2'
+        }
+    }
     stages {
         stage ('Clone') {
             steps {
@@ -34,7 +39,7 @@ pipeline {
         stage ('Exec Maven') {
             steps {
                 rtMavenRun (
-                    tool: "maven3.6", // Tool name from Jenkins configuration
+                    tool: "maven3.6", // Tool name from Jenkins configuratin
                     pom: 'maven-example/pom.xml',
                     goals: 'clean install',
                     deployerId: "MAVEN_DEPLOYER",
