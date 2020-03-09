@@ -35,7 +35,6 @@ pipeline {
 
         stage ('Exec Maven') {
             steps {            
-                sh "$PWD"
                 dir('maven-example'){
                     rtMavenRun (
                         tool: "maven3", // Tool name from Jenkins configuratin
