@@ -38,7 +38,7 @@ pipeline {
                 sh "$PWD"
                 dir('maven-example'){
                     rtMavenRun (
-                        tool: "maven3.6", // Tool name from Jenkins configuratin
+                        tool: "maven3", // Tool name from Jenkins configuratin
                         pom: 'maven-example/pom.xml',
                         goals: 'clean install',
                         deployerId: "MAVEN_DEPLOYER",
