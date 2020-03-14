@@ -45,7 +45,7 @@ pipeline {
                 rtPromote (
                     //Mandatory parameter
                     serverId: "Artifactory",
-                    targetRepo: 'libs-release-local',
+                    targetRepo: 'libs-release-local/Release',
 
                     //Optional parameters
                     buildName: 'MK',
